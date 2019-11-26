@@ -1,8 +1,15 @@
 use imgui::*;
 
 mod support;
+mod db;
+
+extern crate kvdb_rocksdb;
 
 fn main() {
+    let kvdb = db::open().expect("main");
+    // db::print_all(&kvdb);
+    db::print_tendermint_backup(&kvdb);
+
     let system = support::init(file!());
     let mut file_dialog = FileDialog::new();
     system.main_loop(|_, ui| {
