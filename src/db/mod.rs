@@ -16,13 +16,11 @@ pub const COL_ERROR_HINT: Option<u32> = Some(5);
 /// Number of columns in DB
 pub const NUM_COLUMNS: Option<u32> = Some(6);
 
-pub fn open() -> Result<Database, String> {
+pub fn open(db_path: &str) -> Result<Database, String> {
     let db_config = DatabaseConfig::with_columns(NUM_COLUMNS);
 
-    let db_path = "/Users/juhyeong/code/kodebox/codechain/db";
-    let db = 
-        Database::open(&db_config, db_path)
-            .map_err(|_e| "Low level database error. Some issue with disk?".to_string())?;
+    let db = Database::open(&db_config, db_path)
+        .map_err(|_e| "Low level database error. Some issue with disk?".to_string())?;
 
     Ok(db)
 }
