@@ -15,3 +15,5 @@ imgui-glium-renderer = { version = "0.3.0-pre", path = "./imgui-rs/imgui-glium-r
 imgui-winit-support = { version = "0.3.0-pre", path = "./imgui-rs/imgui-winit-support" }
 rlp = { git = "https://github.com/CodeChain-io/rlp.git", tag = "v0.3.1" }
 kvdb-rocksdb = { path = "../kodebox/codechain/util/kvdb-rocksdb" }
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }

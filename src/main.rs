@@ -1,6 +1,7 @@
 use imgui::*;
 
 mod db;
+mod file;
 mod support;
 
 extern crate kvdb_rocksdb;
